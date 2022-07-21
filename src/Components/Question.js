@@ -4,13 +4,12 @@ import Doubt from '../resources/doubt.svg'
 import Wrong from '../resources/wrong.svg'
 
 export default function Question(index, image, state, setState) {
-
     return (
         <div className="question">
             {verifyState(index, image, state, setState)}
         </div >
     );
-}
+};
 
 function verifyState(index, image, state, setState) {
     if (state[1] === 0) {
@@ -22,7 +21,7 @@ function verifyState(index, image, state, setState) {
                 </div>
             </React.Fragment>
         );
-    }
+    };
     if (state[1] === 'G') {
         return (
             <React.Fragment>
@@ -32,7 +31,7 @@ function verifyState(index, image, state, setState) {
                 </div>
             </React.Fragment>
         );
-    }
+    };
     if (state[1] === 'O') {
         return (
             <React.Fragment>
@@ -42,7 +41,7 @@ function verifyState(index, image, state, setState) {
                 </div>
             </React.Fragment>
         );
-    }
+    };
     if (state[1] === 'R') {
         return (
             <React.Fragment>
@@ -52,5 +51,5 @@ function verifyState(index, image, state, setState) {
                 </div>
             </React.Fragment>
         );
-    }
-}
+    };
+};

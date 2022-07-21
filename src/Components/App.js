@@ -11,16 +11,14 @@ export default function App() {
             {status ? <LoadQuizz /> : <LoadStart setStatus={setStatus} />}
         </React.Fragment>
     );
-}
-
+};
 function LoadQuizz() {
     return (
         <Recall />
     );
-}
-
+};
 function LoadStart(setStatus) {
     return (
         <StartPage setStatus={setStatus.setStatus} />
     );
-}
+};

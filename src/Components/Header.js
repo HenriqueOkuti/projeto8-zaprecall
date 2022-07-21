@@ -5,4 +5,4 @@ export default function Header(image) {
             <div className="text">ZapRecall</div>
         </div>
     );
-}
+};

@@ -27,7 +27,7 @@ const deck_fib = [
         question: "3+5?",
         answer: '8'
     }
-]
+];
 
 const deck_fat = [
     {
@@ -50,7 +50,7 @@ const deck_fat = [
         question: "5!",
         answer: '120'
     }
-]
+];
 
 const deckJSX = [
     {
@@ -85,7 +85,7 @@ const deckJSX = [
         question: "Usamos estado (state) para __",
         answer: 'dizer para o React quais informações quando atualizadas devem renderizar a tela novamente'
     },
-]
+];
 
 let deck_recall = [];
 deck_recall = ChooseDeck(deckJSX);
@@ -100,35 +100,31 @@ export default function Recall() {
             <Footer result={result}/>
         </div>
     );
-}
+};
 
 function ChooseDeck(deckPicked) {
     let deckShuffled = [...deckPicked];
     deckShuffled.sort(() => Math.random() - 0.5);
     deckShuffled = deckShuffled.filter((e, i) => i > 3 ? 0 : e);
     return deckShuffled;
-}
-
+};
 
 function RenderCards(deckQuestion, index) {
     const [state, setState] = react.useState([0, 0]);
     const [answered, setAnswered] = react.useState('A');
     const [size, setSize] = react.useState(['notAnswered', 'notAnswered']);
-
     if (!result.includes(size) && size[1] !== 'notAnswered') {
         result.push(size);
-    }
-
+    };
     if (state[0] === 0) {
         return Question(index, Select, state, setState);
-    }
+    };
     if (state[0] === 1 && state[1] === 0) {
         return QuestionSelected(deckQuestion, Flip, setState);
-    }
+    };
     if (state[0] === 2 && state[1] === 0) {
         return QuestionAnswered(deckQuestion, Select, setState, answered, setAnswered, index, setSize);
-    }
-
-}
+    };
+};
 
 

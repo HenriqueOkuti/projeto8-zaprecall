@@ -17,26 +17,26 @@ export default function QuestionAnswered(question, image, setState, answered, se
             </div>
         </div >
     );
-}
+};
 
 function defineStates(option, setState, answered, setAnswered, index, setSize) {
     updateAnswered(option, answered, setAnswered);
     updateSize(option, index, setSize);
     if (option === 'R') {
         return setState([0, 'R']);
-    }
+    };
     if (option === 'O') {
         return setState([0, 'O']);
-    }
+    };
     if (option === 'G') {
         return setState([0, 'G']);
-    }
-}
+    };
+};
 
 function updateAnswered(option, answered, setAnswered) {
     return setAnswered(option);
-}
+};
 
 function updateSize(option, index, setSize) {
     return setSize([index, option]);
-}
+};

@@ -7,4 +7,4 @@ export default function QuestionSelected(question, image, setState) {
             </div>
         </div>
     );
-}
+};
