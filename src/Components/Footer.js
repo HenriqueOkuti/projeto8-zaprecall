@@ -60,7 +60,6 @@ function translateToIcon(array) {
     };
     return array_icons;
 };
-
 function EndOfRecall(obj) {
     let array = obj.array;
     let count = 0;
@@ -84,3 +83,6 @@ function EndOfRecall(obj) {
         );
     };
 };
+
+//Implementar Bonus: Voltar para tela inicial ou reiniciar quizz
+//Implementar Bonus: Comparar resultado com a meta

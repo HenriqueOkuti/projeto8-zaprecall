@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React from "react";
 import Logo from '../resources/zapLogo.svg';
 
 export default function StartPage(setStatus) {
@@ -16,3 +16,5 @@ export default function StartPage(setStatus) {
         </div>
     );
 };
+
+//Implementar Bonus: Inserir meta de Zaps

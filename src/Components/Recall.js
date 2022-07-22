@@ -87,8 +87,16 @@ const deckJSX = [
     },
 ];
 
+const deck_options = {
+    deck_fib: deck_fib,
+    deck_fat: deck_fat,
+    deckJSX: deckJSX
+}
+
+
+//Implementar Bonus: Escolher Deck para jogar 
 let deck_recall = [];
-deck_recall = ChooseDeck(deckJSX);
+deck_recall = ChooseDeck(deck_options.deckJSX);
 
 export default function Recall() {
     return (
@@ -97,7 +105,7 @@ export default function Recall() {
             <div className="questions">
                 {deck_recall.map((e, i) => RenderCards(e, i))}
             </div>
-            <Footer result={result}/>
+            <Footer result={result} />
         </div>
     );
 };

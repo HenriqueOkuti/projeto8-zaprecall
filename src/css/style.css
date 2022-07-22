@@ -40,7 +40,6 @@ body {
 .page_title {
   width: 260px;
   height: 60px;
-
   font-family: "Righteous";
   font-style: normal;
   font-weight: 400;
@@ -48,21 +47,18 @@ body {
   line-height: 45px;
   text-align: center;
   letter-spacing: -0.012em;
-
   color: #ffffff;
-
   margin: 15px 0 25px 0;
 }
 
 .page_buttom {
   width: 240px;
   height: 55px;
-
+  min-height: 55px;
   background: #ffffff;
   border: 1px solid #d70900;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,28 +67,18 @@ body {
 .page_buttom .buttom_text {
   width: 202px;
   height: 22px;
-
   font-family: "Recursive";
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
-
   text-align: center;
-
   color: #d70900;
 }
 
 .recall_container {
-  /*Como alinhar?????????*/
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
   display: grid;
   height: inherit;
-  /* height: 100%;
-  align-self: center;
-  justify-self: center; */
 }
 
 .header {
@@ -110,7 +96,6 @@ body {
 .header .text {
   width: 203.17px;
   height: 44px;
-
   font-family: "Righteous";
   font-style: normal;
   font-weight: 400;
@@ -121,9 +106,7 @@ body {
   justify-content: center;
   text-align: center;
   letter-spacing: -0.012em;
-
   color: #ffffff;
-
   transform: rotate(0.58deg);
 }
 
@@ -136,25 +119,20 @@ body {
 .questions .question {
   width: 300px;
   height: 65px;
-
   background: #ffffff;
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
-
   margin: 0 0 25px 0;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px 0 15px;
-
   color: #333333;
 }
 
 .question .question_title {
   width: 87px;
   height: 19px;
-
   font-family: "Recursive";
   font-style: normal;
   font-weight: 700;
@@ -165,34 +143,29 @@ body {
 .question img {
   width: 20px;
   height: 23px;
-
   color: #333333;
 }
 
 .footer {
   position: sticky;
-  /* position: fixed; */
   z-index: 2;
   bottom: 0;
-
+  height: 100%;
+  min-height: 75px;
   width: 100vw;
-  height: 70px;
-
+  height: 76px;
   background: #ffffff;
   box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   font-family: "Recursive";
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
   text-align: center;
-
   color: #333333;
 }
 
@@ -206,7 +179,6 @@ body {
   position: relative;
   width: 299px;
   height: 131px;
-
   background: #ffffd5;
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
@@ -233,7 +205,6 @@ body {
   right: 15px;
   width: 30px;
   height: 20px;
-
   color: #333333;
 }
 
@@ -244,7 +215,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
-
   font-family: "Recursive";
   font-style: normal;
   font-weight: 400;
@@ -267,7 +237,6 @@ body {
 .red_option {
   width: 85px;
   height: 38px;
-
   background: #ff3030;
   border-radius: 5px;
   margin: 0 10px 0 0px;
@@ -276,7 +245,6 @@ body {
 .orange_option {
   width: 85px;
   height: 38px;
-
   background: #ff922e;
   border-radius: 5px;
 }
@@ -284,7 +252,6 @@ body {
 .green_option {
   width: 85px;
   height: 38px;
-
   background: #2fbe34;
   border-radius: 5px;
   margin: 0 0px 0 10px;
@@ -312,26 +279,21 @@ body {
   position: sticky;
   z-index: 2;
   bottom: 0;
-
   width: 100vw;
-  height: 170px;
-
+  height: 100%;
+  min-height: 170px;
   background: #ffffff;
   box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-
   font-family: "Recursive";
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
   text-align: center;
-  /* identical to box height */
-
   color: #333333;
 }
 
