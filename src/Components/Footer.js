@@ -5,24 +5,24 @@ import Wrong from '../resources/wrong.svg'
 import Party from '../resources/partyEmoji.svg'
 import Sad from '../resources/sadEmoji.svg'
 
-export default function Footer(result) {
-    return renderFooterCount(result.result);
+export default function Footer({ result, deck_length }) {
+    return renderFooterCount(result, deck_length);
 };
 
-function renderFooterCount(array) {
+function renderFooterCount(array, deck_length) {
     let answers = reviewAnswers(array);
     let answers_Icon = translateToIcon(answers);
     if (array[0] === undefined) {
         return (
             <div className="footer">
-                <div className="footer_content">{array.length}/4 Concluidos</div>
+                <div className="footer_content">{array.length}/{deck_length} Concluidos</div>
             </div>
         );
     };
-    if (array.length === 4) {
+    if (array.length === deck_length) {
         return (
             <div className="footer_final">
-                <EndOfRecall array={answers} />
+                <EndOfRecall array={answers} deck_length={deck_length} />
                 <div className="footer_emojis">{answers_Icon.map((e =>
                     <img src={e} alt="alt text" />
                 ))}</div>
@@ -32,7 +32,7 @@ function renderFooterCount(array) {
     if (array[0] !== undefined) {
         return (
             <div className="footer">
-                <div className="footer_content">{array.length}/4 Concluidos</div>
+                <div className="footer_content">{array.length}/{deck_length} Concluidos</div>
                 <div className="footer_emojis">{answers_Icon.map((e =>
                     <img src={e} alt="alt text" />
                 ))}</div>
@@ -60,25 +60,26 @@ function translateToIcon(array) {
     };
     return array_icons;
 };
-function EndOfRecall(obj) {
+function EndOfRecall(obj, { deck_length }) {
+    let total = obj.deck_length;
     let array = obj.array;
-    let count = 0;
-    array.map((e) => (e === 'G' || e === 'O') ? count++ : 0);
-    if (count === array.length) {
+    // let count = 0;
+    // array.map((e) => (e === 'G' || e === 'O') ? count++ : 0);
+    if (!array.includes("R")) {
         return (
             <React.Fragment>
                 <div className="footer_result"><img src={Party} alt="alt text" /> Parabéns!</div>
                 <div className="footer_result_text">Você não esqueceu de nenhum flashcard!</div>
-                <div className="footer_points">{count}/4 Concluidos</div>
+                <div className="footer_points">{array.length}/{total} Concluidos</div>
             </React.Fragment>
         );
     };
-    if (count !== array.length) {
+    if (array.includes("R")) {
         return (
             <React.Fragment>
                 <div className="footer_result"><img src={Sad} alt="alt text" /> Putz...</div>
                 <div className="footer_result_text">Ainda faltam alguns... Mas não desanime!</div>
-                <div className="footer_points">{count}/4 Concluidos</div>
+                <div className="footer_points">{array.length}/{total} Concluidos</div>
             </React.Fragment>
         );
     };

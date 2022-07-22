@@ -87,25 +87,40 @@ const deckJSX = [
     },
 ];
 
-const deck_options = {
-    deck_fib: deck_fib,
-    deck_fat: deck_fat,
-    deckJSX: deckJSX
+const deck_options = [
+    {
+        deck: deck_fib,
+        deck_name: 'deck_fib'
+    },
+    {
+        deck: deck_fat,
+        deck_name: 'deck_fat'
+    },
+    {
+        deck: deckJSX,
+        deck_name: 'deckJSX'
+    }
+];
+let deck_recall = [];
+
+function FindDeck(name) {
+    const deck_chosen = deck_options.filter((e, i) => e.deck_name === name ? e : 0);
+    return deck_chosen[0].deck;
 }
 
-
-//Implementar Bonus: Escolher Deck para jogar 
-let deck_recall = [];
-deck_recall = ChooseDeck(deck_options.deckJSX);
-
-export default function Recall() {
+export default function Recall({ deckRecall }) {
+    const [shuffled, setShuffled] = react.useState(false)
+    if (shuffled === false) {
+        deck_recall = ChooseDeck(FindDeck(deckRecall));
+        setShuffled(true);
+    }
     return (
         <div className="recall_container">
             <Header image={Logo} />
             <div className="questions">
                 {deck_recall.map((e, i) => RenderCards(e, i))}
             </div>
-            <Footer result={result} />
+            <Footer result={result} deck_length={deck_recall.length} />
         </div>
     );
 };
@@ -113,7 +128,7 @@ export default function Recall() {
 function ChooseDeck(deckPicked) {
     let deckShuffled = [...deckPicked];
     deckShuffled.sort(() => Math.random() - 0.5);
-    deckShuffled = deckShuffled.filter((e, i) => i > 3 ? 0 : e);
+    deckShuffled = deckShuffled.filter((e, i, a) => i < a.length ? e : 0);
     return deckShuffled;
 };
 

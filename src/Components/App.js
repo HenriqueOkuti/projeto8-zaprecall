@@ -5,20 +5,23 @@ import StartPage from "./StartPage";
 
 export default function App() {
     const [status, setStatus] = React.useState(!true);
+    const [deckRecall, setDeck] = React.useState('deckJSX');
+    console.log(deckRecall);
     return (
         <React.Fragment>
             <Background />
-            {status ? <LoadQuizz /> : <LoadStart setStatus={setStatus} />}
+            {status ? <LoadQuizz deckRecall={deckRecall} /> : <LoadStart setStatus={setStatus} setDeck={setDeck} />}
         </React.Fragment>
     );
 };
-function LoadQuizz() {
+function LoadQuizz({deckRecall}) {
     return (
-        <Recall />
+        <Recall deckRecall={deckRecall} />
     );
 };
-function LoadStart(setStatus) {
+function LoadStart({setStatus, setDeck}) {
+
     return (
-        <StartPage setStatus={setStatus.setStatus} />
+        <StartPage setStatus={setStatus} setDeck={setDeck} />
     );
 };
