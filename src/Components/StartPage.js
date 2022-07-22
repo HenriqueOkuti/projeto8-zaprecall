@@ -22,19 +22,19 @@ export default function StartPage({ setStatus, setDeck }) {
             <div className="interactive_buttons">
                 <div className="dropdown_menu">
                     <ul className="dropdown_container">
-                        <textarea placeholder="Escolha seu deck">
+                        <textarea placeholder={VerifyText(selected)}>
                         </textarea>
                         <ul className="dropdown_content">
                             <li onClick={() => { setDeck('deck_fib'); setSelected([0, 'clicked']) }} className={verifyClick(0, selected)}>
-                                Deck Fibonacci
+                                Deck Fibonacci(4 cards)
                                 <img src={Correct} alt="alt text" />
                             </li>
                             <li onClick={() => { setDeck('deck_fat'); setSelected([1, 'clicked']) }} className={verifyClick(1, selected)}>
-                                Deck Fatorial
+                                Deck Fatorial(5 cards)
                                 <img src={Correct} alt="alt text" />
                             </li>
                             <li onClick={() => { setDeck('deckJSX'); setSelected([2, 'clicked']) }} className={verifyClick(2, selected)}>
-                                Deck JSX
+                                Deck JSX(8 cards)
                                 <img src={Correct} alt="alt text" />
                             </li>
                         </ul>
@@ -62,3 +62,19 @@ function verifyClick(i, array) {
         return 'not_clicked';
     };
 };
+
+function VerifyText(selection) {
+    if (selection === 'not_clicked') {
+        return 'Escolhe ai...';
+    };
+    if (selection[0] === 0) {
+        return 'Deck Fibonacci(4 cards)';
+    };
+    if (selection[0] === 1) {
+        return 'Deck Fatorial(5 cards)';
+    };
+    if (selection[0] === 2) {
+        return 'Deck JSX(8 cards)';
+    };
+}
+

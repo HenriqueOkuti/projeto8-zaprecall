@@ -108,7 +108,7 @@ function FindDeck(name) {
     return deck_chosen[0].deck;
 }
 
-export default function Recall({ deckRecall }) {
+export default function Recall({ deckRecall, setStatus }) {
     const [shuffled, setShuffled] = react.useState(false)
     if (shuffled === false) {
         deck_recall = ChooseDeck(FindDeck(deckRecall));
@@ -120,7 +120,7 @@ export default function Recall({ deckRecall }) {
             <div className="questions">
                 {deck_recall.map((e, i) => RenderCards(e, i))}
             </div>
-            <Footer result={result} deck_length={deck_recall.length} />
+            <Footer result={result} deck_length={deck_recall.length} setStatus={setStatus} />
         </div>
     );
 };

@@ -378,9 +378,36 @@ textarea::placeholder {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  width: 100%;
+  height: 100%;
 }
 
 .clicked img {
   margin: 0 0 0 15px;
   display: visible;
+}
+
+.restart {
+  width: 167px;
+  height: 32px;
+
+  background: #fb6b6b;
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.restart_text {
+  font-family: "Recursive";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #ffffff;
 }
