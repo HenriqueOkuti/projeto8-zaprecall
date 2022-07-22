@@ -369,3 +369,18 @@ textarea::placeholder {
 .dropdown_menu:hover .dropdown_content {
   display: block;
 }
+
+.not_clicked img {
+  display: none;
+}
+
+.dropdown_content li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.clicked img {
+  margin: 0 0 0 15px;
+  display: visible;
+}

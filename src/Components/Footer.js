@@ -60,7 +60,7 @@ function translateToIcon(array) {
     };
     return array_icons;
 };
-function EndOfRecall(obj, { deck_length }) {
+function EndOfRecall(obj) {
     let total = obj.deck_length;
     let array = obj.array;
     // let count = 0;
