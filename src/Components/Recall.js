@@ -8,7 +8,7 @@ import Header from './Header';
 import Footer from './Footer';
 import react from 'react';
 
-let result = [];
+
 
 const deck_fib = [
     {
@@ -110,15 +110,27 @@ function FindDeck(name) {
 
 export default function Recall({ deckRecall, setStatus }) {
     const [shuffled, setShuffled] = react.useState(false)
+    const [result, setResult] = react.useState([]);
+
+    if (result === deck_recall.length && result !== []){
+        setResult([]);
+    }
+
     if (shuffled === false) {
         deck_recall = ChooseDeck(FindDeck(deckRecall));
         setShuffled(true);
     }
+    if (true) {
+        if (result.length > deck_recall.length) {
+            console.log(result);
+            //array = [];
+        }
+    };
     return (
         <div className="recall_container">
             <Header image={Logo} />
             <div className="questions">
-                {deck_recall.map((e, i) => RenderCards(e, i))}
+                {deck_recall.map((e, i) => RenderCards(e, i, result))}
             </div>
             <Footer result={result} deck_length={deck_recall.length} setStatus={setStatus} />
         </div>
@@ -132,7 +144,7 @@ function ChooseDeck(deckPicked) {
     return deckShuffled;
 };
 
-function RenderCards(deckQuestion, index) {
+function RenderCards(deckQuestion, index, result) {
     const [state, setState] = react.useState([0, 0]);
     const [answered, setAnswered] = react.useState('A');
     const [size, setSize] = react.useState(['notAnswered', 'notAnswered']);

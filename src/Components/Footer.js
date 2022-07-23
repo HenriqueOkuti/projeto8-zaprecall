@@ -10,6 +10,7 @@ export default function Footer({ result, deck_length, setStatus }) {
 };
 
 function renderFooterCount(array, deck_length, setStatus) {
+
     let answers = reviewAnswers(array);
     let answers_Icon = translateToIcon(answers);
     if (array[0] === undefined) {
